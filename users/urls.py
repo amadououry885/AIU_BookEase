@@ -6,6 +6,7 @@ from .views import UserViewSet, UserRegisterView, UserLoginView, UserProfileView
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
 
+
 urlpatterns = [
     path('', include(router.urls)),  # Automatically generates CRUD endpoints for users
     path('register/', UserRegisterView.as_view(), name='user-register'),  # Registration endpoint

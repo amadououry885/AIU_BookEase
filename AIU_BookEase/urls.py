@@ -18,10 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
-    path('api/users/', include('users.urls')),
-    path('api/facilities/', include('facilities.urls')),
-    path('api/bookings/', include('bookings.urls')),
-
+    path('api/', include('users.urls')),  # Prefix users URLs with /api/users/
+    path('api/', include('facilities.urls')),  # Prefix facilities URLs with /api/facilities/
+    path('api/', include('bookings.urls')),  # Prefix bookings URLs with /api/bookings/
 ]

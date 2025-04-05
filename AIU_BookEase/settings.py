@@ -133,3 +133,20 @@ AUTHENTICATION_BACKENDS = [
     'users.backends.EmailBackend',
     'django.contrib.auth.backends.ModelBackend',  # Default backend
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+
+# This is the URL that will be used to access static files in the browser.
+STATIC_URL = '/static/'
+
+# Add this line to specify the directories Django should look for static files.
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # This is assuming 'static' is located in the base directory of your project
+]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

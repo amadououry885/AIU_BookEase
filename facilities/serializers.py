@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from facilities.models import Facility
+from .models import Facility
 
-class FacilitySerializer(serializers.ModelSerializer):
+class FacilitySerializer(serializers.ModelSerializer):  # Use ModelSerializer
     class Meta:
         model = Facility
-        fields = '__all__'  # This includes all fields of the User model
+        fields = ['id', 'name', 'description', 'price', 'availability', 'category']
